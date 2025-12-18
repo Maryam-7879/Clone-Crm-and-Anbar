@@ -4,12 +4,25 @@ define('APP_NAME', 'سیستم مدیریت ارتباط با مشتری');
 define('APP_VERSION', '1.0.0');
 define('BASE_URL', 'http://localhost/new-crm/');
 
+// بارگذاری متغیرهای محیطی از فایل .env
+$envFile = __DIR__ . '/../.env';
+if (file_exists($envFile)) {
+    $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos(trim($line), '#') === 0) continue;
+        list($name, $value) = explode('=', $line, 2);
+        $_ENV[trim($name)] = trim($value);
+    }
+}
+
 // تنظیمات دیتابیس
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'crm_system_new');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_CHARSET', 'utf8mb4');
+define('DB_CONNECTION', $_ENV['DB_CONNECTION'] ?? 'pgsql');
+define('DB_HOST', $_ENV['DB_HOST'] ?? 'aws-0-eu-central-1.pooler.supabase.com');
+define('DB_PORT', $_ENV['DB_PORT'] ?? '6543');
+define('DB_NAME', $_ENV['DB_DATABASE'] ?? 'postgres');
+define('DB_USER', $_ENV['DB_USERNAME'] ?? 'postgres');
+define('DB_PASS', $_ENV['DB_PASSWORD'] ?? '');
+define('DB_CHARSET', 'utf8');
 
 // تنظیمات امنیتی
 define('ENCRYPTION_KEY', 'CRM_SECRET_KEY_2024_SECURE_RANDOM_STRING_HERE');
