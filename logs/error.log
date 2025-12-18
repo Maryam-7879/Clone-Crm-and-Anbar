@@ -5,3 +5,11 @@
 Stack trace:
 #0 {main}
   thrown in /tmp/cc-agent/61661427/project/test_connection.php on line 15
+[19-Dec-2025 02:05:07 Asia/Tehran] API request failed: http://localhost:3001/api/health
+[19-Dec-2025 02:05:07 Asia/Tehran] PHP Fatal error:  Uncaught Exception: Cannot connect to API server in /tmp/cc-agent/61661427/project/private/database.php:16
+Stack trace:
+#0 /tmp/cc-agent/61661427/project/private/database.php(208): Database->getConnection()
+#1 /tmp/cc-agent/61661427/project/public/index.php(4): require_once('...')
+#2 /tmp/cc-agent/61661427/project/index.php(18): require_once('...')
+#3 {main}
+  thrown in /tmp/cc-agent/61661427/project/private/database.php on line 16
