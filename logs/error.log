@@ -1,3 +1,7 @@
 [17-Dec-2025 13:59:59 Asia/Tehran] خطا در اتصال به دیتابیس: SQLSTATE[HY000] [2002] No such file or directory
 [17-Dec-2025 14:00:33 Asia/Tehran] خطا در اتصال به دیتابیس: SQLSTATE[HY000] [2002] No such file or directory
 [19-Dec-2025 01:44:39 Asia/Tehran] خطا در اتصال به دیتابیس: could not find driver
+[19-Dec-2025 02:02:03 Asia/Tehran] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on false in /tmp/cc-agent/61661427/project/test_connection.php:15
+Stack trace:
+#0 {main}
+  thrown in /tmp/cc-agent/61661427/project/test_connection.php on line 15
